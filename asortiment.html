@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <!--Сайт розроблено студенткою Горбань Діаною Вячеславівною 
+Група 5-9з-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyCoffee – Асортимент</title>
+<link rel="stylesheet" href="css/asortiment.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">☕ MyCoffee</div>
+
+    <div class="burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="assortiment.html" class="highlight">Асортимент</a></li>
+            <li><a href="#story">Наша історія</a></li>
+            <li><a href="#specials">Спеціальні пропозиції</a></li>
+            <li><a href="#contact">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="assortment-page">
+    <!-- Ліва колонка: кошик -->
+    <aside class="cart-sidebar">
+        <h3>Кошик</h3>
+        <div id="cart-items">
+            <p class="empty-cart">Кошик порожній</p>
+        </div>
+        <div class="cart-total">
+            <span>Загальна сума: </span><span id="cart-total">0</span>₴
+        </div>
+        <button class="checkout-btn">Оформити замовлення</button>
+    </aside>
+
+    <!-- Основна частина: товари -->
+    <section class="products-section">
+        <div class="filter-nav">
+            <button class="filter-btn active" data-category="all">Всі</button>
+            <button class="filter-btn" data-category="drinks">Напої</button>
+            <button class="filter-btn" data-category="desserts">Десерти</button>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Динамічно будуть рендеритись товари -->
+        </div>
+    </section>
+</main>
+
+
+
+<!-- Popup замовлення -->
+<div id="order-popup" class="order-popup">
+    <div class="order-popup-content">
+        <h3>Оформлення замовлення</h3>
+        <form id="order-form">
+            <div class="form-group">
+                <label>Ім'я:</label>
+                <input type="text" id="first-name" required>
+            </div>
+            <div class="form-group">
+                <label>Прізвище:</label>
+                <input type="text" id="last-name" required>
+            </div>
+            <div class="form-group">
+                <label>Телефон:</label>
+                <input type="tel" id="phone" required pattern="[0-9]{10,12}" placeholder="0671234567">
+            </div>
+            <div class="form-group">
+                <label>Тип замовлення:</label>
+                <select id="order-type" required>
+                    <option value="">Виберіть</option>
+                    <option value="takeaway">З собою</option>
+                    <option value="dinein">У кав’ярні</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Час:</label>
+                <input type="time" id="order-time" required>
+            </div>
+            <div class="form-total">
+                <strong>Сума:</strong> <span id="popup-total">0</span>₴
+            </div>
+            <div class="popup-buttons">
+                <button type="submit" class="confirm-btn">Оформити</button>
+                <button type="button" class="cancel-btn">Відмова</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/assortiment.js"></script>
+</body>
+<footer class="site-footer">
+    <h2>Сайт розроблено студенткою Горбань Діаною Вячеславівною<br>Група 5-9з</h2>
+</footer>
+</html>
